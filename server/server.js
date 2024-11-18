@@ -16,12 +16,12 @@ const corsOptions = {
   app.use(cors(corsOptions));app.use(express.json());
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb+srv://barveanish310:0lBAqTZ1KGYXG1xV@cluster0.mx5in.mongodb.net/", { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
 // Routes
 app.use('/api', apiRoutes);
 
-const PORT = process.env.PORT || 5069;
+const PORT = 5069;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
